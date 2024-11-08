@@ -21,8 +21,8 @@ namespace Chornyi.TaskPlanner.Tests
 
             var workItems = new List<WorkItem>
             {
-                new WorkItem { Title = "Завдання 1", Priority = Priority.High, DueDate = DateTime.Now.AddDays(2), IsCompleted = false },
-                new WorkItem { Title = "Завдання 2", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(3), IsCompleted = false },
+                new WorkItem { Title = "Завдання 1", Priority = Priority.High, DueDate = DateTime.Now.AddDays(3), IsCompleted = false },
+                new WorkItem { Title = "Завдання 2", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(2), IsCompleted = false },
                 new WorkItem { Title = "Завдання 3", Priority = Priority.Urgent, DueDate = DateTime.Now.AddDays(1), IsCompleted = true },
                 new WorkItem { Title = "Завдання 4", Priority = Priority.Low, DueDate = DateTime.Now.AddDays(4), IsCompleted = false }
             };
@@ -37,8 +37,8 @@ namespace Chornyi.TaskPlanner.Tests
         {
             var plan = _planner.CreatePlan();
 
-            Assert.Equal("Завдання 2", plan[0].Title); 
-            Assert.Equal("Завдання 1", plan[1].Title);
+            Assert.Equal("Завдання 1", plan[0].Title); 
+            Assert.Equal("Завдання 2", plan[1].Title);
             Assert.Equal("Завдання 4", plan[2].Title);
         }
         public class SimpleTaskPlanner
